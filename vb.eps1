@@ -1,0 +1,45 @@
+    #TODO: Function
+    function lt {
+    
+        return "[{0:MM/dd/yy} {0:HH:mm:ss}]" -f (Get-Date)
+        
+    }    
+    #TODO: Make Title 
+    Get-Content t # Types the file t
+    Get-Content 0p # Types the file 0p
+    #TODO: Install Scanners
+    mkdir scan
+    Move-Item config.vbc scan
+    Set-Location scan
+    Write-Host "$(lt) Started Script" | Out-File run.log -append
+    Write-Host "$(lt) Getting Anti-Viruses" | Out-File run.log -append
+    Invoke-WebRequest -Uri "https://downloadcenter.mcafee.com/products/mcafee-avert/stinger/stinger32.exe" -OutFile "stinger.exe"
+    Invoke-WebRequest -Uri "https://buy-download.norton.com/downloads/premium_services/NPE/6.5/x86/prod/NPE.exe" -OutFile "npe32.exe"
+    Invoke-WebRequest -Uri "https://buy-download.norton.com/downloads/premium_services/NPE/6.5/x64/prod/NPE.exe" -OutFile "npe.exe"
+    Invoke-WebRequest -Uri "https://downloadcenter.mcafee.com/products/mcafee-avert/rr/rootkitremover.exe" -OutFile "rkr.exe"
+    Invoke-WebRequest -Uri "https://media.kaspersky.com/utilities/VirusUtilities/EN/tdsskiller.exe" -OutFile "kr.exe" # https://downloadcenter.mcafee.com/products/mcafee-avert/rr/rootkitremover.exe
+    #TODO: Let user choose if they wanna run certain anti-viruses
+    Get-Content-Content 1p
+    Write-Host "Is your system x32 bits or x64 bits? (64/32)"
+    $NPEV = Read-Host "Choice"
+    if ($NPEV -eq 64) {
+        .\npe.exe
+        Write-Host "Remember to click Full Scan!"
+    }
+    else {
+        .\npe32.exe 
+        Write-Host "Remember to click Full Scan!"
+    }
+            
+            #TODO: Install Other anti-viruses.
+            Write-Host "$(lt) Starting Stinger Scan" | Out-File run.log -append
+            .\stinger32.exe --AD --GO --SILENT
+            Write-Host "$(lt) Starting TDSSKiller" | Out-File run.log -append
+            .\kr.exe -silent -tdlfs -dcexact -accepteula -accepteulaksn
+            Write-Host "$(lt) Starting McAfee RootKit Remover" | Out-File run.log -append
+            .\rkr.exe
+                    Get-Content 2p
+                    Set-Location ..
+                    Move-Item cs.ps1 scan
+                    Set-Location scan
+                    .\cs.ps1

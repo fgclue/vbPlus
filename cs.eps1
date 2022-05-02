@@ -1,0 +1,10 @@
+Get-Content t2
+#region Scan
+#endregion
+
+#region Delete
+#endregion
+
+#region End
+    Get-Content endAll
+#endregion
