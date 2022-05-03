@@ -1,3 +1,4 @@
 #region Installer
-    # iwr 
+    mkdir VirusByePlus
+    cd VirusByePlus
 #endregion
