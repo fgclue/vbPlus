@@ -37,7 +37,7 @@
             
             #TODO: Install Other anti-viruses.
             Write-Host "$(lt) Starting Stinger Scan" | Out-File run.log -append
-            .\stinger32.exe --AD --GO --SILENT
+            .\stinger.exe --AD --GO --SILENT
             Write-Host "$(lt) Starting TDSSKiller" | Out-File run.log -append
             .\kr.exe -silent -tdlfs -dcexact -accepteula -accepteulaksn
             Write-Host "$(lt) Starting McAfee RootKit Remover" | Out-File run.log -append
