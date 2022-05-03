@@ -3,6 +3,9 @@
     NPEChooser
 #>
 
+Invoke-WebRequest -Uri "https://buy-download.norton.com/downloads/premium_services/NPE/6.5/x86/prod/NPE.exe" -OutFile "npe32.exe"
+Invoke-WebRequest -Uri "https://buy-download.norton.com/downloads/premium_services/NPE/6.5/x64/prod/NPE.exe" -OutFile "npe.exe"
+
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
 
