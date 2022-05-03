@@ -9,7 +9,11 @@
     Get-Content 0p # Types the file 0p
     #TODO: Install Scanners
     mkdir scan
+    Move-Item Cmp scan
     Move-Item config.vbc scan
+    Move-Item 1p scan
+    Move-Item 2p Scan
+    Move-Item 3p scan
     Set-Location scan
     Write-Host "$(lt) Started Script" | Out-File run.log -append
     Write-Host "$(lt) Getting Anti-Viruses" | Out-File run.log -append
@@ -40,6 +44,5 @@
             .\rkr.exe
                     Get-Content 2p
                     Set-Location ..
-                    Move-Item cs.ps1 scan
                     Set-Location scan
-                    .\cs.ps1
+                    Get-Content Cmp

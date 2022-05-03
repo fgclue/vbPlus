@@ -1,6 +1,10 @@
+# DONT USE THIS PLEASE
+
 Get-Content t2
 #region Scan
     #TODO: Make scanner
+    Get-ChildItem C:\ | Out-File test.log # I'm trying to find a equivilent to Get-ChildItem which could get ALL files on the system, because tree doesnt work as it shows the lines and stuff
+    ca
 #endregion
 
 #region DeleteVF

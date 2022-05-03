@@ -1,22 +1,3 @@
 {
     "_READTHIS": "this is the configs for the vscode enviroment.",
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#1b1b1b",
-        "activityBar.activeBorder": "#ffffff",
-        "activityBar.background": "#000000",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#ffffff99",
-        "activityBarBadge.background": "#000000",
-        "activityBarBadge.foreground": "#ffffff",
-        "sash.hoverBorder": "#000000",
-        "statusBar.background": "#000000",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#1a1a1a",
-        "statusBarItem.remoteBackground": "#3e859c",
-        "statusBarItem.remoteForeground": "#ffffff",
-        "titleBar.activeBackground": "#000000",
-        "titleBar.activeForeground": "#ffffff",
-        "titleBar.inactiveBackground": "#00000099",
-        "titleBar.inactiveForeground": "#00000099"
-    },
 }
